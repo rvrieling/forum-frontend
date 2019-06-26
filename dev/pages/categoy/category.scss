@@ -1,0 +1,82 @@
+.container {
+    background-color: #eee;
+    min-height: 100vh;
+    .search {
+        position: fixed;
+        top: 15px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        z-index: 6;
+        p {
+            padding: 0px 10px;
+        }
+        input {
+            padding: 3px 20px;
+            width: 150px;
+            text-align: center;
+            border: 2px solid #ccc;
+            background-color: #eee;
+            border-radius: 10px;
+            outline: none;
+            font-size: 14px;
+        }
+    }
+    .categories-container {
+        display: flex;
+        flex-direction: column;
+        a {
+            text-decoration: none;
+        }
+        .cat {
+            background-color: #fff;
+            margin: 10px 0px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100px;
+            padding: 0px 10px;
+            border-radius: 10px;
+            box-shadow: 0px 20px 10px -20px rgba($color: #000000, $alpha: 0.3);
+            .categories {
+                width: 500px;
+                border-radius: 8px;
+                font-size: 24px;
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                p {
+                    text-decoration: none;
+                }
+                button {
+                    float: right;
+                    color: #fff;
+                    width: 100px;
+                    height: 30px;
+                    border-radius: 8px;
+                    position: relative;
+                    cursor: pointer;
+                    font-size: 14px;
+                    transition: .3s ease-in;
+                    border: 0px;
+                    outline: none;
+                }
+            }
+            .space{
+                height: 40px;
+            }
+        }
+    }
+    .add {
+        position: fixed;
+        bottom: 20px;
+        right: 30px;
+        padding: 15px;
+        border-radius: 100%;
+        box-shadow: 0px 20px 40px -11px rgba($color: #000000, $alpha: .3);
+        
+        i {
+            font-size: 30px;
+        }
+    }
+}

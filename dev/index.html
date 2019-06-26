@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Gangshit</title>
+  <% htmlWebpackPlugin.files.js.forEach(jsFile => { %>
+    <link rel="preload" href="/<%= jsFile %>" as="script">
+  <% }) %>
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,600,700" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
+  <link href="https://fonts.googleapis.com/css?family=Roboto:400,400i,500,700" rel="stylesheet">
+</head>
+<body style="margin: 0px; font-family: 'Roboto', sans-serif;">
+  <div id="root"></div>
+  <%if (!htmlWebpackPlugin.options.production) { %>
+    <script src="http://localhost:35729/livereload.js"></script>
+  <% } %>
+  <% htmlWebpackPlugin.files.js.forEach(jsFile => { %>
+    <script src="/<%= jsFile %>"></script>
+  <% }) %>
+</body>
+</html>

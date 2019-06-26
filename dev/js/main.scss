@@ -1,0 +1,56 @@
+$main-blue: #009DFF;
+$main-green: #10f700;
+
+.main-blue {
+    color: $main-blue;
+}
+
+.main-blue-bg {
+    background-color: $main-blue;
+}
+
+.main-blue-border {
+    border-color: $main-blue !important;
+}
+
+.main-white {
+    color: #fff;
+}
+
+.main-white-bg {
+    background-color: #fff;
+}
+
+.main-green {
+    color: $main-green;
+}
+
+.main-green-bg {
+    background-color: $main-green;
+}
+
+.hover-blue {
+    &:hover {
+        cursor: pointer;
+        color: $main-blue;
+    }
+}
+
+.hover-black {
+    &:hover {
+        cursor: pointer;
+        color: black;
+    }
+}
+
+.hover-green {
+    &:hover {
+        cursor: pointer;
+    }
+}
+
+.hover-green-bg {
+    &:hover {
+        cursor: pointer;
+    }
+}

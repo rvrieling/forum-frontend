@@ -1,0 +1,86 @@
+.room-container {
+    display: flex;
+    justify-content: center;
+    overflow: hidden;
+    height: 100vh;
+    background-color: #eee;
+    .room {
+        background-color: #fff;
+        max-height: 85vh;
+        width: 60%;
+        overflow: hidden;
+        border-radius: 10px;
+        position: relative;
+        margin-top: 100px;
+        box-shadow: 0px 6px 20px -6px rgba(0,0,0,0.8); 
+        .sub-room {
+            overflow-y: scroll;
+            max-height: 80vh;
+            padding-top: 10px;
+            overflow-x: hidden;
+            .message-container {
+                padding-bottom: 15px;
+                .flex-end {
+                    justify-content: flex-end;
+                    padding-right: 10px;
+                }
+                .message {
+                    display: flex;
+                    img {
+                        max-height: 50px;
+                        border-radius: 100px;
+                        position: relative;
+                        top: 0px;
+                        margin: 0px 8px;
+                    }
+                    .text-container {
+                        width: 48%;
+                        padding: 0px 15px;
+                        border-radius: 10px;
+                        box-shadow: 0px 6px 20px -6px rgba(0,0,0,0.8);
+                    }
+                }
+            }
+        }
+        .input-container {
+            display: flex;
+            position: absolute;
+            bottom: 0px;
+            width: 100%;
+            .input {
+                width: 100%;
+                padding-bottom: 1.5%;
+                text-align: left;
+                font-size: 20px;
+                border: none;
+                border-top: 3px solid #eee;
+                resize: none;
+                overflow: hidden;
+                padding-left: 10px;
+                outline: none;
+            }
+            
+        }
+        
+    }
+    .typing {
+        font-style: italic;
+        margin-top: 0px;
+        padding-left: 5px;
+        margin-bottom: 9px;
+    }
+    button {
+        height: 60px;
+        width: 60px;
+        border-radius: 100%;
+        position: relative;
+        left: 15px;
+        outline: none;
+        i {
+            font-size: 30px;
+            position: relative;
+            top: 1px;
+            right: 1px;
+        }
+    }
+}

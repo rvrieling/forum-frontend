@@ -1,0 +1,256 @@
+.nav-bar {
+    display: flex;
+    position: fixed;
+    background-color: #fff;
+    width: 100vw;
+    z-index: 4;
+    padding: 8px 5px;
+    box-shadow: 0px 7px 20px -6px rgba(0,0,0,0.4); 
+    .padding {
+        padding-left: 150px; 
+    }
+    .title {
+        z-index: 2;
+        display: flex;
+        align-self: center;
+        transition: padding .6s;
+        will-change: padding;
+
+        a {
+            text-decoration: none;
+            font-size: 30px;
+            padding: 0px 10px;
+            transition: .3s ease-in-out;
+            will-change: color;
+        }
+    }
+    .icons {
+        z-index: 2;
+        .icon {
+            font-size: 40px;
+            transition: .6s ease-in-out;
+            will-change: color;
+        }
+        .green-dot-active {
+            opacity: 1 !important;
+        }
+        .green-dot {
+            height: 12px;
+            width: 12px;
+            position: absolute;
+            top: 11px;
+            border-radius: 100px;
+            left: 37px;
+            pointer-events: none;
+            opacity: 0;
+            transition: opacity .7s ease-in-out;
+        }
+    }
+    .buttons-hidden{
+        @media screen and (max-width: 600px) {
+            opacity: 0;   
+        }
+    }
+    .buttons {
+        z-index: 2;
+        display: flex;
+        justify-content: center;
+        transition: opacity .6s;
+        will-change: opacity;
+        .active {
+            opacity: 1 !important;
+        }
+        .space {
+            padding: 0px 10px;
+        }
+        .btn-sort {
+            border-radius: 10px;
+            outline: none;
+            transition: .3s ease-in-out;
+            will-change: color;
+            opacity: .6;
+            color: #fff;
+            cursor: pointer;
+            transition: opacity .3s ease-in;
+            height: 30px;
+            width: 100px;
+            border: 0;
+            box-shadow: 2px 15px 15px -13px rgba(0, 0, 0, 0.8);
+            &:hover {
+                opacity: 1;
+            }
+        }
+    }
+    .title-button {
+        background-color: #fff;
+        padding-bottom: 5px;
+        display: flex;
+        z-index: 4;
+        width: 100%;
+        display: flex;
+        align-items: center;
+    }
+    .hide-page {
+        height: 100vh;
+        width: 100vw;
+        position: absolute;
+        background-color: #eee;
+        opacity: 0.8;
+        margin-top: 53px;
+        transition: opacity .3s ease-in;
+    }
+    .hidden {
+        visibility: hidden;
+    }
+    .width {
+        width: 200px !important;
+    }
+    .side-menu {
+        z-index: 5 !important;
+        height: 100%;
+        width: 0;
+        position: fixed;
+        top: 0;
+        left: 0;
+        overflow-x: hidden;
+        transition: width .6s;
+        will-change: width;
+        box-shadow: 8px 28px 40px -15px black;
+        .image {
+            display: flex;
+            position: absolute;
+            padding-right: 54px;
+            padding-top: 5px;
+            a {
+                text-decoration: none;
+                img {
+                    max-height: 100px;
+                    border-radius: 100px;
+                }
+            }
+            p {
+                font-size: 20px;
+                padding-left: 10px;
+                padding-top: 17px;
+            }
+        }
+        .links {
+            display: flex;
+            flex-direction: column;
+            min-width: 200px;
+            padding-top: 15vh;
+            padding-left: 2vw;
+            .link {
+                padding: 10px 0px;
+                font-size: 20px;
+                text-decoration: none;
+                transition: .3s ease-in-out;
+                will-change: color;
+            }
+            .login, .logged {
+                display: flex;
+                flex-direction: column;
+                .green-dot-active {
+                    opacity: 1 !important;
+                }
+                .green-dot {
+                    position: absolute;
+                    top: 291px;
+                    left: 72px;
+                    height: 12px;
+                    width: 12px;
+                    border-radius: 100px;
+                    pointer-events: none;
+                    opacity: 0;
+                    transition: opacity .7s ease-in-out;
+                }
+            }
+        }
+        .side-icon {
+            display: flex;
+            justify-content: flex-end;
+            .icon {
+                font-size: 40px;
+                position: absolute;
+                padding: 5px;
+                transition: .3s ease-in-out;
+                will-change: color;
+            }
+        }
+    }
+    .active {
+        top: 79% !important;
+    }
+    .popup-container {
+        height: 100%;
+        position: fixed;
+        top: 110%;
+        left: 72.5%;
+        width: 25%;
+        border-radius: 10px;
+        transition: top .7s;
+        will-change: top;
+        .top {
+            display: flex;
+        }
+        img {
+            max-height: 70px;
+            border-radius: 100px;
+            position: relative;
+            top: 5px;
+            left: 5px;
+            transition: .4s ease-in-out;
+            opacity: 1;
+            &:hover {
+                opacity: .6;
+                cursor: pointer;
+            } 
+        }
+        .text {
+            position: relative;
+            left: 10px;
+            a {
+                transition: .4s ease-in-out;
+            }
+        } 
+        .message {
+            position: relative;
+            left: 10px;
+            top: -5px;
+            a {
+                position: relative;
+                top: 8px;
+                transition: .4s ease-in-out;
+            }
+        }
+    }
+    .user-container {
+        position: absolute;
+        z-index: 4;
+        top: 0px;
+        right: 35px;
+        display: flex;
+        align-items: center;
+        height: 100%;
+        a {
+            font-size: 24px;
+            text-decoration: none;
+        }
+        .image-container {
+            .user-image {
+                height: 50px;
+                width: 50px;
+                background-position: center;
+                background-repeat: no-repeat;
+                background-size: cover;
+                border-radius: 100%;
+                margin-left: 5px;
+            }
+        }
+    }
+    .page-hidden {
+        opacity: 0;
+        z-index: 1;
+        pointer-events: none;
+    }
+}

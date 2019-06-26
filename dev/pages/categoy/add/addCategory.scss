@@ -1,0 +1,33 @@
+.add-container {
+    height: 400px;
+    width: 350px;
+    border-radius: 8px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    input,button {
+        height: 50px;
+        width: 150px;
+        border-radius: 8px;
+        outline: none;
+        text-align: center;
+        font-size: 13px;
+        color: #0061ff;
+        border: 0px;
+        opacity: .6;
+        transition: opacity .3s ease-in;
+        &::placeholder {
+            color: #0061ff;
+        }
+        &:hover,&:focus {
+            opacity: 1;
+        }
+    }
+    button {
+        cursor: pointer;
+    }
+    p {
+        color: white;
+    }
+}

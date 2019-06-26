@@ -1,0 +1,69 @@
+stages: 
+  - build
+  - deploy
+
+build_frontend: 
+  stage: build
+  image: beeproger/node-10:1.0
+  script: 
+    - yarn
+    - yarn build
+  artifacts:
+    paths: 
+      - build
+    expire_in: 1 days
+  tags: 
+    - builds
+
+
+deploy_develop:
+  variables: {
+    SSH: ssh -tt $USER@$HOST,
+    FILE_PATH: $FILE_PATH_DEVELOP
+  }
+  stage: deploy
+  image: beeproger/php-7.2:1.0
+  extends: .deploy-before
+  dependencies: 
+    - build_frontend
+  environment:
+    name: develop
+    url: $DEV_URL
+  script: 
+    - ls
+  only: 
+    - develop
+  when: on_success
+  tags:
+    - deploy
+
+deploy_production:
+  variables: {
+    SSH: ssh -tt $USER@$HOST,
+    FILE_PATH: $FILE_PATH_PRODUCTION
+  }
+  stage: deploy
+  image: beeproger/php-7.2:1.0
+  extends: .deploy-before
+  dependencies: 
+    - build_frontend
+  environment:
+    name: production
+    url: $PROD_URL
+  script: 
+    - ls
+  only: 
+    - master
+  when: manual
+  tags:
+    - deploy
+
+.deploy-before:
+    before_script:
+      - mkdir -p ~/.ssh
+      - chmod 700 ~/.ssh
+      - eval $(ssh-agent -s)
+      - echo "$SSH_PRIVATE_KEY" | tr -d '\r' | ssh-add - > /dev/null
+      - '[[ -f /.dockerenv ]] && echo -e "Host *\n\tStrictHostKeyChecking no\n\n" > ~/.ssh/config'
+      - $SSH "mkdir -p $FILE_PATH"
+      - scp -r * $USER@$HOST:$FILE_PATH
